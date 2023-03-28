@@ -42,4 +42,4 @@ Test with POSTMAN
 
 `PUT /products/<int:id>`: Update an existing product.
 
-`DELETE /products/<int:id>`: Delete a specific product by ID.SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+`DELETE /products/<int:id>`: Delete a specific product by ID.
