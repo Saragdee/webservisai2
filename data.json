@@ -1,0 +1,51 @@
+{
+    "suppliers": [
+        {
+            "name": "Supplier A",
+            "email": "supplier_a@example.com",
+            "phone": "123-456-7890"
+        },
+        {
+            "name": "Supplier B",
+            "email": "supplier_b@example.com",
+            "phone": "987-654-3210"
+        },
+        {
+            "name": "Supplier C",
+            "email": "supplier_c@example.com",
+            "phone": "555-555-5555"
+        }
+    ],
+    "products": [
+        {
+            "name": "Product 1",
+            "price": 9.99,
+            "supplier_id": 1
+        },
+        {
+            "name": "Product 2",
+            "price": 19.99,
+            "supplier_id": 1
+        },
+        {
+            "name": "Product 3",
+            "price": 29.99,
+            "supplier_id": 2
+        },
+        {
+            "name": "Product 4",
+            "price": 39.99,
+            "supplier_id": 2
+        },
+        {
+            "name": "Product 5",
+            "price": 49.99,
+            "supplier_id": 3
+        },
+        {
+            "name": "Product 6",
+            "price": 59.99,
+            "supplier_id": 3
+        }
+    ]
+}

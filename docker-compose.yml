@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: inventory
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    restart: always
+    environment:
+      FLASK_ENV: development
+      DATABASE_URL: postgres://postgres:postgres@db:5432/inventory_db
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
