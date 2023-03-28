@@ -30,11 +30,17 @@ def create_tables():
         data = json.load(f)
 
     for supplier in data['suppliers']:
-        cur.execute('INSERT INTO suppliers (name, email, phone) VALUES (%s, %s, %s)', (supplier['name'], supplier['email'], supplier['phone']))
-
-
+        cur.execute('SELECT COUNT(*) FROM suppliers WHERE name=%s', (supplier['name'],))
+        count = cur.fetchone()[0]
+        if count == 0:
+            cur.execute('INSERT INTO suppliers (name, email, phone) VALUES (%s, %s, %s)', (supplier['name'], supplier['email'], supplier['phone']))
+        
     for product in data['products']:
-        cur.execute('INSERT INTO products (name, price, supplier_id) VALUES (%s, %s, %s)', (product['name'], product['price'], product['supplier_id']))
+        cur.execute('SELECT COUNT(*) FROM products WHERE name=%s AND supplier_id=%s', (product['name'], product['supplier_id']))
+        count = cur.fetchone()[0]
+        if count == 0:
+            cur.execute('INSERT INTO products (name, price, supplier_id) VALUES (%s, %s, %s)', (product['name'], product['price'], product['supplier_id']))
+
 
 
     conn.commit()
